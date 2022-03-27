@@ -1,0 +1,26 @@
+{
+  "name": "crypto-exchanges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts $1",
+    "test": "jest --config ./jest.config.json"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/june2/crypto-exchanges.git"
+  },
+  "author": "june",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/june2/crypto-exchanges/issues"
+  },
+  "homepage": "https://github.com/june2/crypto-exchanges#readme"
+}
