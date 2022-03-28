@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import WebSocket from 'isomorphic-ws';
 
-interface UpbitSocketPayload {
+interface IUpbitSocketPayload {
   type: 'ticker' | 'trade' | 'orderbook';
   isOnlySnapshot?: boolean;
   isOnlyRealtime?: boolean;
@@ -61,7 +61,7 @@ export class Upbit {
       .sort((a, b) => (sort === Sort.ASC ? (a.price > b.price ? 1 : -1) : a.price > b.price ? -1 : 1));
   }
 
-  public Open(payload: UpbitSocketPayload, cb?: Function) {
+  public Open(payload: IUpbitSocketPayload, cb?: Function) {
     this.ws.onopen = (e) => {
       this.ws.send(`${JSON.stringify([{ ticket: uuidv4() }, { codes: this.codes, ...payload }])}`);
       if (cb) {
